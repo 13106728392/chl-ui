@@ -1,9 +1,9 @@
 <template>
-  <div class="item">
+  <div class="chl-collapse-item">
     <div class="header" @click="toggle">
       {{title}}
       <div class="ico" :class="icoClass">
-        <chl-button name="right"></chl-button>
+        <chl-button name="right" icon="right"></chl-button>
       </div>
     </div>
     <div class="body" v-show="visible">
@@ -75,25 +75,30 @@ export default {
 };
 </script>
 <style lang="css" scoped>
-.item {
+.chl-collapse-item {
   border-bottom: 1px solid #ccc;
 }
-.item .header {
+.chl-collapse-item .header {
   padding: 0.5em 0em;
   display: flex;
   justify-content: space-between;
 }
-.item .body {
+.chl-collapse-item .header .chl-button{
+  border: none;
+  background-color:transparent;
+}
+
+.chl-collapse-item .body {
   padding: 0.6em 0em;
 }
-.item:last-child {
+.chl-collapse-item:last-child {
   border-bottom: none;
 }
-.item .ico {
+.chl-collapse-item .ico {
   margin-left: auto;
   transition: all 0.3s;
 }
-.item .ico-active {
+.chl-collapse-item .ico-active {
   transform-origin: center;
   transform: rotate(90deg);
 }

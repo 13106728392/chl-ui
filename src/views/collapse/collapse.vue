@@ -1,13 +1,13 @@
 <!--
  * @Author: your name
  * @Date: 2020-04-26 15:45:28
- * @LastEditTime: 2020-04-26 16:30:24
- * @LastEditors: your name
+ * @LastEditTime: 2020-04-27 09:55:47
+ * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \chl-ui\src\views\collapse\collapse.vue
  -->
 <template>
-  <div class="collapse">
+  <div class="chl-collapse">
     <slot></slot>
   </div>
 </template>
@@ -72,7 +72,7 @@ export default {
 };
 </script>
 <style lang="css" scoped>
-.collapse {
+.chl-collapse {
   border: 1px solid #ddd;
   border-radius: 4px;
   padding: 0.5em 1em;

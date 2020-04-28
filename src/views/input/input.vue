@@ -1,8 +1,8 @@
 <!--
  * @Author: your name
  * @Date: 2020-04-26 15:45:28
- * @LastEditTime: 2020-04-26 16:31:03
- * @LastEditors: your name
+ * @LastEditTime: 2020-04-28 15:01:23
+ * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \chl-ui\src\views\input\input.vue
  -->
@@ -25,7 +25,7 @@
       @blur="$emit('blur',$event.target.value)"
     >
     <template v-if="error">
-      <s-icon name="error"></s-icon>
+      <chl-icon name="error"></chl-icon>
       <span class="err-msg">{{error}}</span>
     </template>
   </div>

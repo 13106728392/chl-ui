@@ -1,8 +1,8 @@
 <!--
  * @Author: your name
  * @Date: 2020-04-26 15:45:28
- * @LastEditTime: 2020-04-26 16:32:14
- * @LastEditors: your name
+ * @LastEditTime: 2020-04-28 16:53:50
+ * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \chl-ui\src\views\home.vue
  -->
@@ -10,7 +10,7 @@
   <div class="bigBOX">
     <div class="buttonBox showBox">
       <h4>按钮</h4>
-      <c-button type="primary">正常</c-button>
+      <c-button type="primary" name="right">正常</c-button>
       <c-button type="info">一般</c-button>
       <c-button type="success">成功</c-button>
       <c-button type="warning">警告</c-button>
@@ -38,28 +38,56 @@
           <div>香蕉是淀粉质丰富的有益水果。</div>
         </c-collapse-item>
         <c-collapse-item title="菠萝 Pineapple" name="2">
-          <div>菠萝果实品质优良，营养丰富，含有大量的果糖，葡萄糖，维生素B、C，磷，柠檬酸和蛋白酶等物质。</div>
+          <div>菠萝果实品质优良，营养丰富，含有大量的果糖，。</div>
         </c-collapse-item>
         <c-collapse-item title="葡萄 Grape" name="3">
           <div>成熟的浆果中葡萄含糖量高达10%-30%，以葡萄糖为主。</div>
         </c-collapse-item>
         <c-collapse-item title="柠檬 Lemon" name="4">
-          <div>柠檬富含维生素C、糖类、钙、磷、铁、维生素B1、维生素B2、烟酸、奎宁酸、柠檬酸、苹果酸、橙皮苷、柚皮苷、香豆精、高量钾元素和低量钠元素等，对人体十分有益。</div>
+          <div>柠檬富含维生素C、糖类、钙、磷、铁、维生素B1</div>
         </c-collapse-item>
-    </c-collapse>
+      </c-collapse>
     </div>
-     <div class="buttonBox showBox">
+    <div class="buttonBox showBox">
       <h4>全局提示</h4>
       <c-button type="info" @click="successtoast">一般</c-button>
-      <c-button type="success"  @click="success">成功 </c-button>    
+      <c-button type="success" @click="success">成功</c-button>
     </div>
+    <c-sticky :offset-top="0">
+      <div class="stickyBox">滚动下看我是不是吸顶了</div>
+    </c-sticky>
+    <c-tab v-model="selected">
+      <c-tab-head>
+        <c-tab-item name="x" disabled>NBA</c-tab-item>
+        <c-tab-item name="kebi">科比</c-tab-item>
+        <c-tab-item name="jianeite">加内特</c-tab-item>
+        <c-tab-item name="dengkeng">邓肯</c-tab-item>
+        <c-tab-item name="zhanmushi">詹姆斯</c-tab-item>
+        <c-tab-item name="ouwen">欧文</c-tab-item>
+      </c-tab-head>
+      <c-tab-body>
+        <c-tab-pane name="x"></c-tab-pane>
+        <c-tab-pane name="kebi">专业特点：高效的得分手、善于组织与防守、能力全面</c-tab-pane>
+        <c-tab-pane name="jianeite">专业特点：攻守兼备、善于抢篮板与跳投</c-tab-pane>
+        <c-tab-pane name="dengkeng">专业特点：强力的内线球员</c-tab-pane>
+        <c-tab-pane name="zhanmushi">专业特点：技术全面，突破与组织进攻的能力强</c-tab-pane>
+        <c-tab-pane name="ouwen">重要事件：2014年男篮世界杯冠军</c-tab-pane>
+      </c-tab-body>
+    </c-tab>
   </div>
 </template>
 <script>
 import cbutton from "./button/button";
 import cinput from "./input/input";
-import ccollapse from './collapse/collapse';
-import ccollapseitem from  './collapse/collapse-item';
+import ccollapse from "./collapse/collapse";
+import ccollapseitem from "./collapse/collapse-item";
+import sticky from "./sticky/sticky";
+import tab from "./tab/tab";
+import tabitem from "./tab/tab-item";
+import tabhead from "./tab/tab-head";
+import tabpane from "./tab/tab-pane";
+import tabbody from "./tab/tab-body";
+
 
 
 export default {
@@ -67,38 +95,53 @@ export default {
   components: {
     "c-button": cbutton,
     "c-input": cinput,
-    'c-collapse':ccollapse,
-    'c-collapse-item':ccollapseitem
+    "c-collapse": ccollapse,
+    "c-collapse-item": ccollapseitem,
+    "c-sticky": sticky,
+    "c-tab": tab,
+    "c-tab-head": tabhead,
+    "c-tab-item": tabitem,
+    "c-tab-pane": tabpane,
+    "c-tab-body": tabbody
   },
   data() {
     return {
       strings: "",
-      selected1:'1'
+      selected1: "1",
+      selected: "flower"
     };
   },
-  methods:{
-    successtoast(){
+  methods: {
+    successtoast() {
       this.$toast({
-        message: "一般。" ,
-      })
+        message: "一般。"
+      });
     },
-    success(){
+    success() {
       this.$toast({
-        message: "成功。" ,
-        type:'success'
-      })
+        message: "成功。",
+        type: "success"
+      });
     }
   }
 };
 </script>
 <style lang="css" scoped>
-
 .bigBOX {
   width: 1000px;
+  height: 10000px;
   margin: 0 auto;
 }
 .showBox {
-  border: 1px solid deeppink;
+  border: 1px solid rosybrown;
   padding-bottom: 20px;
+  margin: 10px 0;
+}
+
+.stickyBox {
+  width: 200px;
+  height: 50px;
+  line-height: 50px;
+  background-color: yellowgreen;
 }
 </style>

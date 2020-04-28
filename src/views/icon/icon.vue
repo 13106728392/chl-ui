@@ -1,21 +1,21 @@
 <!--
  * @Author: your name
  * @Date: 2020-04-26 15:45:28
- * @LastEditTime: 2020-04-26 16:30:37
- * @LastEditors: your name
+ * @LastEditTime: 2020-04-28 14:59:48
+ * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \chl-ui\src\views\icon\icon.vue
  -->
 <template>
     <svg  @click="clickHandler"
-         class="s-icon" aria-hidden="true" :style="{color}">
+         class="chl-icon" aria-hidden="true" :style="{color}">
         <use :xlink:href="`#i-${name}`"></use>
     </svg>
 </template>
 <script>
 import './svg'
 export default {
-  name: 's-icon',
+  name: 'chl-icon',
   props: ['name', 'color', 'hoverColor'],
   methods: {
     clickHandler () {
@@ -25,7 +25,7 @@ export default {
 }
 </script>
 <style lang="css" scoped>
-.s-icon {
+.chl-icon {
   width: 1em;
   height: 1em;
   vertical-align: -0.15em;

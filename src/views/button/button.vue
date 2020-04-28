@@ -1,18 +1,18 @@
 <template>
   <button class="chl-button" :class="btnClass" @click="$emit('click')">
-    <c-icon v-if="icon && !loading" :name="icon" class="icon"></c-icon>
-    <c-icon v-if="loading" name="loading" class="icon loading"></c-icon>
+    <chl-icon v-if="icon && !loading" :name="icon" class="icon"></chl-icon>
+    <chl-icon v-if="loading" name="loading" class="icon loading"></chl-icon>
     <div class="btn-content">
       <slot></slot>
     </div>
   </button>
 </template>
 <script>
-import Cicon from "../icon/icon";
+import chlicon from "../icon/icon";
 export default {
   name: "home",
   components: {
-    "c-icon": Cicon
+    "chl-icon": chlicon
   },
   props: {
     type: {

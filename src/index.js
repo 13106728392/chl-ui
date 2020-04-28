@@ -1,7 +1,7 @@
 /*
  * @Author: your name
  * @Date: 2020-04-24 15:23:08
- * @LastEditTime: 2020-04-26 15:57:14
+ * @LastEditTime: 2020-04-28 16:45:50
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \chlui\src\views\index.js
@@ -11,3 +11,9 @@ export { default as Button } from './views/button/button'
 export { default as Collapse } from './views/collapse/collapse'
 export { default as Icon } from './views/icon/icon'
 export { default as Toast } from './views/toast/toast'
+export { default as Sticky } from './views/sticky/sticky'
+export { default as TabBody } from './tab/tab-body'
+export { default as TabHead } from './tab/tab-head'
+export { default as TabItem } from './tab/tab-item'
+export { default as TabPane } from './tab/tab-pane'
+export { default as Tab } from './tab/tab'
