@@ -1,7 +1,7 @@
 <!--
  * @Author: your name
  * @Date: 2020-04-27 14:34:13
- * @LastEditTime: 2020-04-28 16:54:25
+ * @LastEditTime: 2020-04-28 17:48:09
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \chl-ui\src\views\tab\tab.vue
@@ -29,6 +29,7 @@ export default {
   },
   data() {
     return {
+      // 其实就是用一个类似vuex的bus去进行事件的广播
       eventBus: new Vue()
     };
   },
@@ -36,13 +37,10 @@ export default {
     return { eventBus: this.eventBus };
   },
   mounted() {
-    console.log(this.value)
     // todo 找到被选中的item，发送给eventBus
     this.$children.forEach(child => {
-      console.log(child.$options.name)
       if (child.$options.name === "chl-tab-head") {
         child.$children.forEach(grandChild => {
-          console.log(grandChild)
           if (grandChild.name === this.value) {
             this.eventBus.$emit("update:selected", this.value, grandChild);
           }

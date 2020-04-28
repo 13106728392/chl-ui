@@ -4,7 +4,7 @@
 <!--
  * @Author: chl
  * @Date: 2020-04-26 15:44:50
- * @LastEditTime: 2020-04-26 20:40:44
+ * @LastEditTime: 2020-04-28 17:50:52
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \chl-ui\README.md
@@ -20,7 +20,7 @@ npm install chl-ui -s
 ```
 main.js文件    	import 'chlui/dist/chl-ui.css'
 ```
-#### 按需引入组件
+#### 按需引入组件(已完成以下组件)
 ```
 import {
 	Input,
@@ -28,6 +28,10 @@ import {
 	Collapse, 
 	Icon,
 	Toast,
+    TabBody,
+    TabItem, 
+    TabPane,
+    Tab 
 } from 'chl-ui'
 ```
 
