@@ -4,7 +4,7 @@
 <!--
  * @Author: chl
  * @Date: 2020-04-26 15:44:50
- * @LastEditTime: 2020-04-28 17:50:52
+ * @LastEditTime: 2020-04-29 10:18:40
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \chl-ui\README.md
@@ -54,6 +54,18 @@ import {Button} from 'chlui'
     }
 </script>
 ```
+####    组件设计的思想包括单数据流/ eventBus事件中心，核心动作是组件通信，会涉及到的vue api包括
+* $childrem ： 获取当前组件子组件
+* $parent：  获取当前组件父组件
+* $refs： 获取当前组件某个组件或者dom
+* $el: 组件的根dom结点
+* provide && inject： 简单的来说就是在父组件中通过provider来提供变量，然后在子组件中通过inject来注入变量。
+    需要注意的是这里不论子组件有多深，只要调用了inject那么就可以注入provider中的数据。而不是局限于只能从当前父组件的prop属性来获取数据。
+* $on： 组件监听自定义事件
+* $emit： 组件触发自定义事件
+* .sync：语法糖，父组件监听到子组件修改props的意图后父组件修改传入的props
+
+
 
 #### 组件参数文档
 

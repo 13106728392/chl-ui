@@ -1,7 +1,7 @@
 <!--
  * @Author: your name
  * @Date: 2020-04-26 15:45:28
- * @LastEditTime: 2020-04-28 16:53:50
+ * @LastEditTime: 2020-04-30 10:28:49
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \chl-ui\src\views\home.vue
@@ -74,6 +74,14 @@
         <c-tab-pane name="ouwen">重要事件：2014年男篮世界杯冠军</c-tab-pane>
       </c-tab-body>
     </c-tab>
+    <c-form :model.sync="user" class="form" ref="form" :rules="rules">
+      <c-form-item label="strings" name="strings">
+        <c-input v-model="user.strings"></c-input>
+      </c-form-item>
+      <c-form-item label="strings2" name="strings2">
+        <c-input v-model="user.strings2"></c-input>
+      </c-form-item>
+    </c-form>
   </div>
 </template>
 <script>
@@ -87,8 +95,8 @@ import tabitem from "./tab/tab-item";
 import tabhead from "./tab/tab-head";
 import tabpane from "./tab/tab-pane";
 import tabbody from "./tab/tab-body";
-
-
+import form from "./form/form";
+import formitem from "./form/form-item";
 
 export default {
   name: "home",
@@ -102,13 +110,55 @@ export default {
     "c-tab-head": tabhead,
     "c-tab-item": tabitem,
     "c-tab-pane": tabpane,
-    "c-tab-body": tabbody
+    "c-tab-body": tabbody,
+    "c-form-item": formitem,
+    "c-form": form
   },
   data() {
+    var checkName = val => {
+      if (val === "test") {
+        throw new Error("自定义校验规则~");
+      } else {
+        return true;
+      }
+    };
     return {
       strings: "",
       selected1: "1",
-      selected: "flower"
+      selected: "flower",
+      user: {
+        strings: "",
+        strings2: ""
+      },
+      rules: {
+        strings: [
+          { required: true, message: "请输入名字", trigger: "blur" },
+          {
+            lengthControl: [3, 5],
+            message: "长度在 3 到 5 个字符",
+            trigger: "blur"
+          },
+          { pattern: /^(D)+$/, message: "内容不能有数字", trigger: "blur" },
+          { validator: checkName, trigger: "blur" }
+        ],
+        strings2: [
+          { required: true, message: "请输入年龄", trigger: "blur" },
+          {
+            lengthControl: [null, 2],
+            message: "长度不能超过2",
+            trigger: "blur"
+          },
+          { pattern: /d/, message: "必须是数字", trigger: "blur" }
+          // { validator: checkAge, trigger: 'blur' }
+        ],
+        count: [
+          {
+            lengthControl: [null, 4],
+            message: "长度不能超过4",
+            trigger: "blur"
+          }
+        ]
+      }
     };
   },
   methods: {
