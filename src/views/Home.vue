@@ -1,7 +1,7 @@
 <!--
  * @Author: your name
  * @Date: 2020-04-26 15:45:28
- * @LastEditTime: 2020-04-30 10:28:49
+ * @LastEditTime: 2020-04-30 11:11:40
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \chl-ui\src\views\home.vue
@@ -85,10 +85,10 @@
   </div>
 </template>
 <script>
-import cbutton from "./button/button";
-import cinput from "./input/input";
-import ccollapse from "./collapse/collapse";
-import ccollapseitem from "./collapse/collapse-item";
+import button from "./button/button";
+import input from "./input/input";
+import collapse from "./collapse/collapse";
+import collapseitem from "./collapse/collapse-item";
 import sticky from "./sticky/sticky";
 import tab from "./tab/tab";
 import tabitem from "./tab/tab-item";
@@ -101,10 +101,10 @@ import formitem from "./form/form-item";
 export default {
   name: "home",
   components: {
-    "c-button": cbutton,
-    "c-input": cinput,
-    "c-collapse": ccollapse,
-    "c-collapse-item": ccollapseitem,
+    "c-button": button,
+    "c-input": input,
+    "c-collapse": collapse,
+    "c-collapse-item": collapseitem,
     "c-sticky": sticky,
     "c-tab": tab,
     "c-tab-head": tabhead,

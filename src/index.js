@@ -1,7 +1,7 @@
 /*
  * @Author: your name
  * @Date: 2020-04-24 15:23:08
- * @LastEditTime: 2020-04-28 16:45:50
+ * @LastEditTime: 2020-04-30 11:15:39
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \chlui\src\views\index.js
@@ -17,3 +17,5 @@ export { default as TabHead } from './tab/tab-head'
 export { default as TabItem } from './tab/tab-item'
 export { default as TabPane } from './tab/tab-pane'
 export { default as Tab } from './tab/tab'
+export { default as Form } from './form/form'
+export { default as Formitem } from './form/form-item'
