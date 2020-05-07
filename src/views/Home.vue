@@ -1,7 +1,7 @@
 <!--
  * @Author: your name
  * @Date: 2020-04-26 15:45:28
- * @LastEditTime: 2020-04-30 11:11:40
+ * @LastEditTime: 2020-05-07 17:04:28
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \chl-ui\src\views\home.vue
@@ -34,17 +34,17 @@
     </div>
     <div class="showBox">
       <c-collapse v-model="selected1" style="width:600px">
-        <c-collapse-item title="香蕉 Banana" name="1">
-          <div>香蕉是淀粉质丰富的有益水果。</div>
+        <c-collapse-item title="科比" name="1">
+          <div>专业特点：高效的得分手、善于组织与防守、能力全面</div>
         </c-collapse-item>
-        <c-collapse-item title="菠萝 Pineapple" name="2">
-          <div>菠萝果实品质优良，营养丰富，含有大量的果糖，。</div>
+        <c-collapse-item title="加内特" name="2">
+          <div>专业特点：攻守兼备、善于抢篮板与跳投</div>
         </c-collapse-item>
-        <c-collapse-item title="葡萄 Grape" name="3">
-          <div>成熟的浆果中葡萄含糖量高达10%-30%，以葡萄糖为主。</div>
+        <c-collapse-item title="邓肯" name="3">
+          <div>专业特点：强力的内线球员</div>
         </c-collapse-item>
-        <c-collapse-item title="柠檬 Lemon" name="4">
-          <div>柠檬富含维生素C、糖类、钙、磷、铁、维生素B1</div>
+        <c-collapse-item title="詹姆斯" name="4">
+          <div>专业特点：技术全面，突破与组织进攻的能力强</div>
         </c-collapse-item>
       </c-collapse>
     </div>
@@ -82,6 +82,26 @@
         <c-input v-model="user.strings2"></c-input>
       </c-form-item>
     </c-form>
+
+
+
+    <c-carousel v-model="selectedcarousel" class="carousel-wrapper" height='600px'>
+      <c-carousel-item name="1">
+        <div class="box">1</div>
+      </c-carousel-item>
+      <c-carousel-item name="2"> 
+        <div class="box" >2</div>
+      </c-carousel-item>
+      <c-carousel-item name="3">
+        <div class="box">3</div>
+      </c-carousel-item>
+      <c-carousel-item name="4">
+        <div class="box">4</div>
+      </c-carousel-item>
+      <c-carousel-item name="5">
+        <div class="box">5</div>
+      </c-carousel-item>
+    </c-carousel>
   </div>
 </template>
 <script>
@@ -97,6 +117,8 @@ import tabpane from "./tab/tab-pane";
 import tabbody from "./tab/tab-body";
 import form from "./form/form";
 import formitem from "./form/form-item";
+import carousel from "./carousel/carousel"
+import carouselitem from "./carousel/carousel-item"
 
 export default {
   name: "home",
@@ -112,7 +134,9 @@ export default {
     "c-tab-pane": tabpane,
     "c-tab-body": tabbody,
     "c-form-item": formitem,
-    "c-form": form
+    "c-form": form,
+    "c-carousel":carousel,
+    "c-carousel-item":carouselitem
   },
   data() {
     var checkName = val => {
@@ -130,6 +154,7 @@ export default {
         strings: "",
         strings2: ""
       },
+      selectedcarousel:'2',
       rules: {
         strings: [
           { required: true, message: "请输入名字", trigger: "blur" },
@@ -194,4 +219,10 @@ export default {
   line-height: 50px;
   background-color: yellowgreen;
 }
+
+/* .box{
+  width: 600px;
+  height: 200px;
+  background-color: grey;
+} */
 </style>

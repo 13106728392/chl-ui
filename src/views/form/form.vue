@@ -1,7 +1,7 @@
 <!--
  * @Author: your name
  * @Date: 2020-04-29 14:37:45
- * @LastEditTime: 2020-04-30 11:03:08
+ * @LastEditTime: 2020-05-06 10:27:19
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \chl-ui\src\views\form\form.vue
@@ -83,13 +83,13 @@ export default {
     findReqiredFields () {
       for (let item of Object.entries(this.rules)) {
           for (const iterator of item[1]) {
-         let keys = Object.keys(iterator)
+          let keys = Object.keys(iterator)
           if (keys.includes('required') && iterator['required']) {
                 this.requiredFieldsList.push(item[0]) 
                 break
               }
           }
-       }
+       }         
     }
   }
 }
