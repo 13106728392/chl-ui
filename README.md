@@ -4,7 +4,7 @@
 <!--
  * @Author: chl
  * @Date: 2020-04-26 15:44:50
- * @LastEditTime: 2020-04-30 11:14:56
+ * @LastEditTime: 2020-05-07 17:13:34
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \chl-ui\README.md
@@ -33,7 +33,9 @@ import {
     TabPane,
     Tab,
     Form,
-    Formitem
+    Formitem,
+    Carousel,
+    Carouselitem
 } from 'chl-ui'
 ```
 
