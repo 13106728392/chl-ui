@@ -1,7 +1,7 @@
 <!--
  * @Author: chl
  * @Date: 2020-05-07 11:00:47
- * @LastEditTime: 2020-05-07 16:47:58
+ * @LastEditTime: 2020-05-11 15:49:02
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \chl-ui\src\views\carousel\carousel-item.vue

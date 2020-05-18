@@ -4,7 +4,7 @@
 <!--
  * @Author: chl
  * @Date: 2020-04-26 15:44:50
- * @LastEditTime: 2020-05-07 17:13:34
+ * @LastEditTime: 2020-05-18 16:25:18
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \chl-ui\README.md
@@ -98,3 +98,6 @@ error(string)错误 | |
 placeholder(string)空白值|  |
 
 
+
+##### 添加时间
+Modal --2020-05-18

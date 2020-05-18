@@ -1,15 +1,18 @@
 <!--
  * @Author: your name
  * @Date: 2020-04-26 15:45:28
- * @LastEditTime: 2020-05-07 17:04:28
+ * @LastEditTime: 2020-05-18 15:47:53
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \chl-ui\src\views\home.vue
  -->
 <template>
   <div class="bigBOX">
+    <c-button type="primary" name="right" @click="showModal">显示提示框</c-button>
     <div class="buttonBox showBox">
       <h4>按钮</h4>
+        
+
       <c-button type="primary" name="right">正常</c-button>
       <c-button type="info">一般</c-button>
       <c-button type="success">成功</c-button>
@@ -105,6 +108,7 @@
   </div>
 </template>
 <script>
+import Vue from 'vue';
 import button from "./button/button";
 import input from "./input/input";
 import collapse from "./collapse/collapse";
@@ -119,6 +123,7 @@ import form from "./form/form";
 import formitem from "./form/form-item";
 import carousel from "./carousel/carousel"
 import carouselitem from "./carousel/carousel-item"
+
 
 export default {
   name: "home",
@@ -197,6 +202,36 @@ export default {
         message: "成功。",
         type: "success"
       });
+    },
+    showModal() {
+      let func1 = () => {
+        this.$toast({
+          message: '敲,敲烂他',
+          duration: 1500 ,
+          type:'success'})
+      }
+      let func2 = () => {
+        this.$toast({
+          message: '不了，太难了',
+          duration: 1500,
+          type:'default'})
+      }
+      let func3 = () => {
+        this.$toast({
+          message: '你就这样叉掉了？？',
+          duration: 2500,
+          type:'danger' })
+      }
+      this.$modal({
+        title: '你生成了一个modal',
+        content: '今晚敲代码吗?',
+        btnConfig: {
+          'confirmText': '确认',
+          'confirmCallback': func1,
+          'cancelText': '取消',
+          'cancelCallback': func2,
+          'cancelModalCallback': func3
+        } })
     }
   }
 };

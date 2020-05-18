@@ -1,8 +1,8 @@
 /*
  * @Author: your name
  * @Date: 2019-05-17 09:12:41
- * @LastEditTime: 2020-04-24 15:31:10
- * @LastEditors: your name
+ * @LastEditTime: 2020-05-18 15:24:08
+ * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \chlui\src\main.js
  */
@@ -10,6 +10,9 @@ import Vue from 'vue'
 import App from './App.vue'
 import router from './router'
 import ToastPlugin from "./views/toast/toast.js";
+import modal from './views/modal/modal.js'
+
+Vue.use(modal)
 
 Vue.use(ToastPlugin);
 
