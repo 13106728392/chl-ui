@@ -1,17 +1,19 @@
 <!--
  * @Author: your name
  * @Date: 2020-04-26 15:45:28
- * @LastEditTime: 2020-05-18 15:47:53
+ * @LastEditTime: 2020-08-26 14:50:39
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \chl-ui\src\views\home.vue
  -->
 <template>
   <div class="bigBOX">
+    <sider/>
+
+
     <c-button type="primary" name="right" @click="showModal">显示提示框</c-button>
     <div class="buttonBox showBox">
       <h4>按钮</h4>
-        
 
       <c-button type="primary" name="right">正常</c-button>
       <c-button type="info">一般</c-button>
@@ -86,14 +88,12 @@
       </c-form-item>
     </c-form>
 
-
-
-    <c-carousel v-model="selectedcarousel" class="carousel-wrapper" height='600px'>
+    <c-carousel v-model="selectedcarousel" class="carousel-wrapper" height="600px">
       <c-carousel-item name="1">
         <div class="box">1</div>
       </c-carousel-item>
-      <c-carousel-item name="2"> 
-        <div class="box" >2</div>
+      <c-carousel-item name="2">
+        <div class="box">2</div>
       </c-carousel-item>
       <c-carousel-item name="3">
         <div class="box">3</div>
@@ -105,10 +105,11 @@
         <div class="box">5</div>
       </c-carousel-item>
     </c-carousel>
+    <canvas id="canvas" width="100%" height="100%"></canvas>
   </div>
 </template>
 <script>
-import Vue from 'vue';
+import Vue from "vue";
 import button from "./button/button";
 import input from "./input/input";
 import collapse from "./collapse/collapse";
@@ -121,13 +122,17 @@ import tabpane from "./tab/tab-pane";
 import tabbody from "./tab/tab-body";
 import form from "./form/form";
 import formitem from "./form/form-item";
-import carousel from "./carousel/carousel"
-import carouselitem from "./carousel/carousel-item"
+import carousel from "./carousel/carousel";
+import carouselitem from "./carousel/carousel-item";
+import { runStarrySky } from "./start/start";
 
+// 侧边栏
+import sider from '../component/sider'
 
 export default {
   name: "home",
   components: {
+    sider,
     "c-button": button,
     "c-input": input,
     "c-collapse": collapse,
@@ -140,8 +145,8 @@ export default {
     "c-tab-body": tabbody,
     "c-form-item": formitem,
     "c-form": form,
-    "c-carousel":carousel,
-    "c-carousel-item":carouselitem
+    "c-carousel": carousel,
+    "c-carousel-item": carouselitem
   },
   data() {
     var checkName = val => {
@@ -151,6 +156,7 @@ export default {
         return true;
       }
     };
+
     return {
       strings: "",
       selected1: "1",
@@ -159,7 +165,7 @@ export default {
         strings: "",
         strings2: ""
       },
-      selectedcarousel:'2',
+      selectedcarousel: "2",
       rules: {
         strings: [
           { required: true, message: "请输入名字", trigger: "blur" },
@@ -191,6 +197,9 @@ export default {
       }
     };
   },
+  mounted() {
+    runStarrySky();
+  },
   methods: {
     successtoast() {
       this.$toast({
@@ -206,32 +215,36 @@ export default {
     showModal() {
       let func1 = () => {
         this.$toast({
-          message: '敲,敲烂他',
-          duration: 1500 ,
-          type:'success'})
-      }
+          message: "敲,敲烂他",
+          duration: 1500,
+          type: "success"
+        });
+      };
       let func2 = () => {
         this.$toast({
-          message: '不了，太难了',
+          message: "不了，太难了",
           duration: 1500,
-          type:'default'})
-      }
+          type: "default"
+        });
+      };
       let func3 = () => {
         this.$toast({
-          message: '你就这样叉掉了？？',
+          message: "你就这样叉掉了？？",
           duration: 2500,
-          type:'danger' })
-      }
+          type: "danger"
+        });
+      };
       this.$modal({
-        title: '你生成了一个modal',
-        content: '今晚敲代码吗?',
+        title: "你生成了一个modal",
+        content: "今晚敲代码吗?",
         btnConfig: {
-          'confirmText': '确认',
-          'confirmCallback': func1,
-          'cancelText': '取消',
-          'cancelCallback': func2,
-          'cancelModalCallback': func3
-        } })
+          confirmText: "确认",
+          confirmCallback: func1,
+          cancelText: "取消",
+          cancelCallback: func2,
+          cancelModalCallback: func3
+        }
+      });
     }
   }
 };
@@ -239,7 +252,8 @@ export default {
 <style lang="css" scoped>
 .bigBOX {
   width: 1000px;
-  height: 10000px;
+  height: 2000px;
+  background-color: #fff;
   margin: 0 auto;
 }
 .showBox {
@@ -254,10 +268,12 @@ export default {
   line-height: 50px;
   background-color: yellowgreen;
 }
-
-/* .box{
-  width: 600px;
-  height: 200px;
-  background-color: grey;
-} */
+#canvas {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: -99;
+  top: 0;
+  left: 0;
+}
 </style>

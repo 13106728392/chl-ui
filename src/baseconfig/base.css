@@ -1,0 +1,53 @@
+/**
+ * 系统布局相关类
+ */
+
+ * {
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box;
+ }
+ 
+ /* 滚动条 */
+ ::-webkit-scrollbar {
+   width: 10px;
+   z-index: 9999 !important;
+   height: 10px;
+   background-color: #F5F5F5;
+ }
+ 
+ html,
+ body {
+   -webkit-tap-highlight-color: transparent;
+   font-family: "MicrosoftYaHei";
+   background-color: #f1f1f1;
+   height: 100%;
+ }
+ 
+ ul,
+ li {
+   list-style: none;
+ }
+ 
+ input,
+ textarea {
+   -moz-appearance: none;
+   -webkit-appearance: none;
+   border: none;
+   outline: none;
+ }
+ 
+ textarea[disabled] {
+   opacity: 1;
+   background: transparent;
+ }
+ 
+ a {
+  text-decoration: none;
+  outline: none;
+}
+a:hover, a:link, a:focus {
+  text-decoration: none;
+}
+ 
+ 

@@ -1,16 +1,19 @@
 /*
  * @Author: your name
  * @Date: 2019-05-17 09:12:41
- * @LastEditTime: 2020-05-18 15:24:08
+ * @LastEditTime: 2020-08-26 17:56:03
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \chlui\src\main.js
  */
+import "./baseconfig/base.css"
 import Vue from 'vue'
 import App from './App.vue'
 import router from './router'
 import ToastPlugin from "./views/toast/toast.js";
 import modal from './views/modal/modal.js'
+
+
 
 Vue.use(modal)
 
