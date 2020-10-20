@@ -1,7 +1,7 @@
 <!--
  * @Author: your name
  * @Date: 2020-04-26 15:45:28
- * @LastEditTime: 2020-08-28 09:30:09
+ * @LastEditTime: 2020-10-20 20:44:28
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \chl-ui\src\views\home.vue
@@ -46,6 +46,8 @@ export default {
   name: "sider",
   data() {},
   mounted() {   
+
+
   },
   methods: {
 

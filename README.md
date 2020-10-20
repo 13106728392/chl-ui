@@ -4,7 +4,7 @@
 <!--
  * @Author: chl
  * @Date: 2020-04-26 15:44:50
- * @LastEditTime: 2020-05-18 16:25:18
+ * @LastEditTime: 2020-10-20 20:44:14
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \chl-ui\README.md
@@ -13,12 +13,12 @@
 
 ## 使用
 ```
-npm install chl-ui -s 
+npm install chlui -s 
 ```
 ## 第一引入使用
 #### 引入全局样式 
 ```
-main.js文件    	import 'chlui/dist/chl-ui.css'
+main.js文件    	import 'chlui/dist/chlui.css'
 ```
 #### 按需引入组件(已完成以下组件,文档尚未完成,参数可参考elementui，大同小异)
 ```
