@@ -1,5 +1,5 @@
 /*
- * @Author: your name
+ * @Author: chl
  * @Date: 2019-05-17 09:12:41
  * @LastEditTime: 2020-08-26 17:56:03
  * @LastEditors: Please set LastEditors
@@ -10,16 +10,18 @@ import "./baseconfig/base.css"
 import Vue from 'vue'
 import App from './App.vue'
 import router from './router'
-import ToastPlugin from "./views/toast/toast.js";
-import modal from './views/modal/modal.js'
+import  Element from 'element-ui'
+import 'element-ui/lib/theme-chalk/index.css'
 
 
-
-Vue.use(modal)
-
-Vue.use(ToastPlugin);
+// 全局使用组件
+import './component'
+// 全局使用自定义方法
+import './providers'
 
 Vue.use(router);
+Vue.use(Element)
+
 
 const context = require.context('./', true, /^((?!demo\.vue).)+\.vue$/)
 try {
@@ -34,5 +36,8 @@ try {
 new Vue({
   el: '#app',
   router,
+  beforeCreate(){
+    // Vue.prototype.eventBus = this
+  },
   render: h => h(App)
 })

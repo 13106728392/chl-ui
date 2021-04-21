@@ -1,8 +1,8 @@
 <!--
- * @Author: your name
+ * @Author: chl
  * @Date: 2020-04-26 15:45:28
  * @LastEditTime: 2020-04-26 16:32:06
- * @LastEditors: your name
+ * @LastEditors: chl
  * @Description: In User Settings Edit
  * @FilePath: \chl-ui\src\App.vue
  -->
